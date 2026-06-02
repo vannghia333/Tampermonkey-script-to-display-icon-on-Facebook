@@ -26,7 +26,7 @@
         
         // Tạo phần tử ảnh
         const img = document.createElement('img');
-        img.src = 'https://cdn.phototourl.com/free/2026-06-02-df72aff3-5f49-44f8-85aa-ccbdc4978c3e.jpg';
+        img.src = 'https://i.ibb.co/prz6B53m/lv-0-20260602223721.jpg';
         img.style.cssText = `
             width: 100%;
             height: 100%;
