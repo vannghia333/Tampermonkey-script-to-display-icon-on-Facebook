@@ -10,7 +10,7 @@
 // @match        *://fb.com/*
 // @match        *://www.fb.com/*
 // @icon         https://www.facebook.com/favicon.ico
-// @grant        none
+// @grant        GM_xmlhttpRequest
 // @updateURL    https://raw.githubusercontent.com/vannghia333/Tampermonkey-script-to-display-icon-on-Facebook/main/facebook-script.js
 // @downloadURL  https://raw.githubusercontent.com/vannghia333/Tampermonkey-script-to-display-icon-on-Facebook/main/facebook-script.js
 // ==/UserScript==
@@ -27,6 +27,11 @@
         // Tạo phần tử ảnh
         const img = document.createElement('img');
         img.src = 'https://img.taoanhdep.com/img/1780483010928-taoanhdep_sticker.png';
+        img.onerror = function() {
+            console.warn('❌ Ảnh không tải được, hiển thị emoji thay thế');
+            iconContainer.innerHTML = '⭐';
+            iconContainer.style.fontSize = '40px';
+        };
         img.style.cssText = `
             width: 100%;
             height: 100%;
