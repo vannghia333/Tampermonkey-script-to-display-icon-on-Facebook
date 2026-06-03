@@ -28,11 +28,11 @@
         const img = document.createElement('img');
         img.src = 'https://img.taoanhdep.com/img/1780483010928-taoanhdep_sticker.png';
         img.style.cssText = `
-            width: 100%;
-            height: 100%;
+            width: 120%;
+            height: 120%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #1877F2;
+            object-position: center;
         `;
         iconContainer.appendChild(img);
         
@@ -43,27 +43,28 @@
             right: 20px;
             cursor: pointer;
             z-index: 9999;
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            border: 2px solid #ddd;
         `;
         
         // Hiệu ứng khi di chuột vào
         iconContainer.onmouseover = function() {
-            this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
-            this.style.transform = 'scale(1.1)';
+            this.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.25)';
+            this.style.transform = 'scale(1.15)';
         };
         
         // Hiệu ứng khi di chuột ra
         iconContainer.onmouseout = function() {
-            this.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
             this.style.transform = 'scale(1)';
         };
         
