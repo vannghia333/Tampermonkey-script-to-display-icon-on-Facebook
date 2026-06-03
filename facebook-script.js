@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Facebook Icon Script
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Display icon when visiting Facebook
 // @author       vannghia333
 // @match        *://facebook.com/*
@@ -10,7 +10,7 @@
 // @match        *://fb.com/*
 // @match        *://www.fb.com/*
 // @icon         https://www.facebook.com/favicon.ico
-// @grant        none
+// @grant        GM_xmlhttpRequest
 // @updateURL    https://raw.githubusercontent.com/vannghia333/Tampermonkey-script-to-display-icon-on-Facebook/main/facebook-script.js
 // @downloadURL  https://raw.githubusercontent.com/vannghia333/Tampermonkey-script-to-display-icon-on-Facebook/main/facebook-script.js
 // ==/UserScript==
@@ -27,6 +27,15 @@
         // Tạo phần tử ảnh
         const img = document.createElement('img');
         img.src = 'https://raw.githubusercontent.com/vannghia333/Tampermonkey-script-to-display-icon-on-Facebook/main/lv_0_20260602223721.jpg';
+        
+        // Nếu ảnh không tải, hiển thị emoji
+        img.onerror = function() {
+            console.warn('⚠️ Ảnh không tải được, hiển thị emoji');
+            iconContainer.innerHTML = '😊';
+            iconContainer.style.fontSize = '45px';
+            iconContainer.style.lineHeight = '70px';
+        };
+        
         img.style.cssText = `
             width: 120%;
             height: 120%;
@@ -70,7 +79,7 @@
         
         // Sự kiện click
         iconContainer.onclick = function() {
-            alert('✨ Chào mừng bạn đến Facebook! ✨\n\nScript version: 1.0');
+            alert('✨ Chào mừng bạn đến Facebook! ✨\n\nScript version: 1.1');
             console.log('🎉 Custom Facebook Script is active!');
         };
         
@@ -81,6 +90,6 @@
         console.log('✅ Facebook Icon Script loaded successfully!');
         console.log('📍 Icon displayed at top-right corner on all Facebook pages');
         
-    }, 1000);
+    }, 1500);
     
 })();
