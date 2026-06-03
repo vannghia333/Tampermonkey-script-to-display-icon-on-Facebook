@@ -26,7 +26,7 @@
         
         // Tạo phần tử ảnh
         const img = document.createElement('img');
-        img.src = 'https://img.taoanhdep.com/img/1780483010928-taoanhdep_sticker.png';
+        img.src = 'https://raw.githubusercontent.com/vannghia333/Tampermonkey-script-to-display-icon-on-Facebook/main/lv_0_20260602223721.jpg';
         img.style.cssText = `
             width: 120%;
             height: 120%;
